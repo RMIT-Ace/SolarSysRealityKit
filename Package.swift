@@ -18,7 +18,8 @@ let package = Package(
         .target(
             name: "SolarSysRealityKit",
             resources: [
-                .process("Media.xcassets")
+                .process("Media.xcassets"),
+                .process("3DAssets")
             ]
         ),
 
