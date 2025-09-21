@@ -26,7 +26,10 @@ public class SkyboxEntity: Entity {
     public required init(_ type: SkyboxType = .starfield) async {
         super.init()
         
-        if let hapiLabTexture = try? await TextureResource(named: type.rawValue) {
+        if let hapiLabTexture = try? await TextureResource(
+            named: type.rawValue,
+            in: SolarSysRealityKitResources.bundle
+        ) {
             let mesh = MeshResource.generateSphere(radius: 10)
             let material = UnlitMaterial(texture: hapiLabTexture)
             let hapiSphere = ModelEntity(mesh: mesh, materials: [material])
