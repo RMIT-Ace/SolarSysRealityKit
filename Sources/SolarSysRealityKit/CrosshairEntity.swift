@@ -13,7 +13,7 @@ internal import Combine
 /// Crosshair calls the callback "action" function periodically with
 /// object it detects or nil if there is none.
 ///
-class CrosshairEntity: Entity {
+public class CrosshairEntity: Entity {
     
     private var action: (_ hitEntity: Entity?, _ distance: Float) -> Void
     private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
