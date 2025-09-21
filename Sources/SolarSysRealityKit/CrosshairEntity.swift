@@ -24,7 +24,7 @@ public class CrosshairEntity: Entity {
         fatalError("ERROR: CrosshairEntity is not intended to be instantiated directly.")
     }
     
-    required init(
+    public required init(
         distanceFromCamera: Float = -0.02,
         action: @escaping (Entity?, Float) -> Void = { _, _ in }
     ) async {
