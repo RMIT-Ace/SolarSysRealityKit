@@ -75,3 +75,24 @@ public class CrosshairEntity: Entity {
         }
     }
 }
+
+extension CrosshairEntity {
+    
+    /// A utility function to enable Collision feature on target(able) entity.
+    ///
+    public static func enableCollisioin(for entity: ModelEntity) {
+        // Adding collision component
+        var objWidth: Float = 0.0
+        if let meshBounds = entity.model?.mesh.bounds {
+            objWidth = Float(meshBounds.max.x - meshBounds.min.x)
+            entity.components.set(
+                CollisionComponent(
+                    shapes: [.generateSphere(radius: objWidth / 2)],
+                    mode: .trigger
+                )
+            )
+        } else {
+            print("WARN: no bounds on model, using 0.0 width")
+        }
+    }
+}
