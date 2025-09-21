@@ -32,6 +32,8 @@ public class SkyboxEntity: Entity {
             let hapiSphere = ModelEntity(mesh: mesh, materials: [material])
             self.addChild(hapiSphere)
             hapiSphere.transform.scale = SIMD3(-1, 1, 1)
+        } else {
+            print(">> WARN: No skybox texture found for \(type.rawValue)")
         }
     }
     
