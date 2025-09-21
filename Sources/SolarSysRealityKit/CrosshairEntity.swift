@@ -80,7 +80,7 @@ extension CrosshairEntity {
     
     /// A utility function to enable Collision feature on target(able) entity.
     ///
-    public static func enableCollisioin(for entity: ModelEntity) {
+    public static func enableCrosshairDection(for entity: ModelEntity) {
         // Adding collision component
         var objWidth: Float = 0.0
         if let meshBounds = entity.model?.mesh.bounds {
